@@ -54,10 +54,10 @@
 
     //creo intestazione tabella hotel
     
-    // intestazione nomi hotel
+    // intestazione colonne secondo keys
 echo '<table class="table"><thead><tr>';
-    foreach ($hotels[0] as $key) {
-        echo "<th scope='col'>"."prova".'</th>';
+    foreach ($hotels[0] as $key =>$value) {
+        echo "<th scope='col'>".$key.'</th>';
     };
 echo '</tr></thead>';
 echo '<tbody>';
@@ -72,7 +72,7 @@ foreach ($hotels as $key => $value) {
             $parcheggio='presente';
         };
         
-        echo '<tr>;
+        echo '<tr>
         <th scope="row">'.$value["name"].'</th>
         <td>'.$value["description"].'</td>
         <td>'.$parcheggio.'</td>
