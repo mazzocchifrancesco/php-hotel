@@ -51,11 +51,43 @@
 <body>
     <?php
 
+    // prova, stampa TUTTO in linea
+    // foreach ($hotels as $hotel) {
+
+    //     echo implode(", ",$hotel);
+    //     echo '<br><br>';
+
+    // };
+
+
+    echo '<br><br>';
+    echo '<br><br>';
+    echo '<br><br>';
 
     foreach ($hotels as $hotel) {
 
-        echo implode(" ",$hotel);
+        echo "Nome: ".$hotel['name'];
+        echo '<br>';
+        echo "Descrizione: ".$hotel['description'];
+        echo '<br>';
+
+        $parcheggio='manca';
+
+        if ($hotel['parking']==true) {
+            $parcheggio='presente';
+        }
+        echo "Parcheggio: ".$parcheggio;
+        echo '<br>';
+
+        echo "Voto: ".$hotel['vote'];
+        echo '<br>';
+        echo "Distanza dal centro: ".$hotel['distance_to_center'];
+        echo '<br>';
+        
         echo '<br><br>';
+
+
+
 
     };
 
