@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hotel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <?php
 
     $hotels = [
@@ -51,47 +52,70 @@
 <body>
     <?php
 
-    // prova, stampa TUTTO in linea
+    //creo intestazione tabella con nomi hotel
+    
+echo '<table class="table"><thead><tr>';
+    foreach ($hotels[0] as $key) {
+        echo "<th scope='col'>"."prova".'</th>';
+    };
+echo '</tr></thead>';
+echo '<tbody>';
+
+foreach ($hotels as $key => $value) { 
+
+    // convertitore valore parcheggio 
+    $parcheggio='manca';
+    if ($value['parking']==true) {
+        $parcheggio='presente';
+    };
+    
+    echo '<tr>;
+    <th scope="row">'.$value["name"].'</th>
+    <td>'.$value["description"].'</td>
+    <td>'.$parcheggio.'</td>
+    <td>'.$value["vote"].'</td>
+    <td>'.$value["distance_to_center"].' km</td>
+
+  </tr>';
+    
+
+
+};
+echo '</tbody></teble';
+
+
+
+
+
     // foreach ($hotels as $hotel) {
 
-    //     echo implode(", ",$hotel);
+    //     echo "Nome: ".$hotel['name'];
+    //     echo '<br>';
+    //     echo "Descrizione: ".$hotel['description'];
+    //     echo '<br>';
+
+    //     $parcheggio='manca';
+
+    //     if ($hotel['parking']==true) {
+    //         $parcheggio='presente';
+    //     }
+    //     echo "Parcheggio: ".$parcheggio;
+    //     echo '<br>';
+
+    //     echo "Voto: ".$hotel['vote'];
+    //     echo '<br>';
+    //     echo "Distanza dal centro: ".$hotel['distance_to_center']." km";
+    //     echo '<br>';
+        
     //     echo '<br><br>';
+
+
+
 
     // };
 
 
-    echo '<br><br>';
-    echo '<br><br>';
-    echo '<br><br>';
-
-    foreach ($hotels as $hotel) {
-
-        echo "Nome: ".$hotel['name'];
-        echo '<br>';
-        echo "Descrizione: ".$hotel['description'];
-        echo '<br>';
-
-        $parcheggio='manca';
-
-        if ($hotel['parking']==true) {
-            $parcheggio='presente';
-        }
-        echo "Parcheggio: ".$parcheggio;
-        echo '<br>';
-
-        echo "Voto: ".$hotel['vote'];
-        echo '<br>';
-        echo "Distanza dal centro: ".$hotel['distance_to_center'];
-        echo '<br>';
-        
-        echo '<br><br>';
-
-
-
-
-    };
-
-
 ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
