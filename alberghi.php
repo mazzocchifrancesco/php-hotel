@@ -64,7 +64,7 @@ echo '<tbody>';
 
 foreach ($hotels as $key => $value) { 
 
-    if ($value["vote"] >= $_GET["voto"]) {
+    if ($value["vote"] >= $_GET["voto"] || $_GET["voto"]=="" ) {
 
         // convertitore valore parcheggio 
         $parcheggio='manca';
