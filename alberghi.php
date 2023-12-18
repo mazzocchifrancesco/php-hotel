@@ -52,8 +52,9 @@
 <body>
     <?php
 
-    //creo intestazione tabella con nomi hotel
+    //creo intestazione tabella hotel
     
+    // intestazione nomi hotel
 echo '<table class="table"><thead><tr>';
     foreach ($hotels[0] as $key) {
         echo "<th scope='col'>"."prova".'</th>';
@@ -63,20 +64,23 @@ echo '<tbody>';
 
 foreach ($hotels as $key => $value) { 
 
-    // convertitore valore parcheggio 
-    $parcheggio='manca';
-    if ($value['parking']==true) {
-        $parcheggio='presente';
-    };
-    
-    echo '<tr>;
-    <th scope="row">'.$value["name"].'</th>
-    <td>'.$value["description"].'</td>
-    <td>'.$parcheggio.'</td>
-    <td>'.$value["vote"].'</td>
-    <td>'.$value["distance_to_center"].' km</td>
+    if ($value["vote"] >= $_GET["voto"]) {
 
-  </tr>';
+        // convertitore valore parcheggio 
+        $parcheggio='manca';
+        if ($value['parking']==true) {
+            $parcheggio='presente';
+        };
+        
+        echo '<tr>;
+        <th scope="row">'.$value["name"].'</th>
+        <td>'.$value["description"].'</td>
+        <td>'.$parcheggio.'</td>
+        <td>'.$value["vote"].'</td>
+        <td>'.$value["distance_to_center"].' km</td>
+        
+        </tr>';
+    }
     
 
 
